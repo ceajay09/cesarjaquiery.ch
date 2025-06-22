@@ -18,10 +18,17 @@ const bachelorProjectURL = "https://studierendenprojekte.wirtschaft.fhnw.ch/view
 
 export default function AboutMe() {
   const { t } = useTranslation();
+  const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
   const [showNumber, setShowNumber] = useState(false);
 
   const handleClick = () => {
-    setShowNumber(!showNumber);
+    if (!phoneNumber) {
+      fetch(`${import.meta.env.VITE_API_URL}/api/contact/phone`)
+        .then((res) => res.text())
+        .then((data) => setPhoneNumber(data))
+        .catch((err) => console.error("Failed to fetch phone number", err));
+    }
+    setShowNumber(true);
   };
 
   return (
@@ -52,7 +59,7 @@ export default function AboutMe() {
                   </Typography>
                   {showNumber ? (
                     <Typography variant="body1" component="span">
-                      +41 76 759 83 45
+                      {phoneNumber || '-'}
                     </Typography>
                   ) : (
                     <Button onClick={handleClick}>

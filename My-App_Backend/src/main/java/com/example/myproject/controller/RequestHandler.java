@@ -29,7 +29,7 @@ import java.util.Queue;
  * and downloading PDF resources.
  */
 @RestController
-@CrossOrigin(origins = {"https://cesarjaquiery.ch", "http://localhost:3000"})
+@CrossOrigin(origins = { "https://cesarjaquiery.ch", "http://localhost:3000" })
 @PropertySource("classpath:application.properties")
 public class RequestHandler {
 
@@ -41,10 +41,10 @@ public class RequestHandler {
     private final BlogService blogService;
 
     public RequestHandler(AccountRepository accountRepository,
-                          AccountService accountService,
-                          BlogRepository blogRepository,
-                          PDFService pdfService,
-                          BlogService blogService) {
+            AccountService accountService,
+            BlogRepository blogRepository,
+            PDFService pdfService,
+            BlogService blogService) {
         this.accountRepository = accountRepository;
         this.accountService = accountService;
         this.blogRepository = blogRepository;
@@ -68,9 +68,8 @@ public class RequestHandler {
         return accountService.logoutUser(token);
     }
 
-
-    @GetMapping(path = "api/account/{id}", produces = "application/json") //TODO: in getaccount umbenennen
-    public Account getAccountById(@PathVariable String id) { //TODO: Logger?
+    @GetMapping(path = "api/account/{id}", produces = "application/json") // TODO: in getaccount umbenennen
+    public Account getAccountById(@PathVariable String id) { // TODO: Logger?
         return accountRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
@@ -79,12 +78,13 @@ public class RequestHandler {
         return accountService.getAccountInfoByToken(authentication);
     }
 
-    @GetMapping(path = "api/blogpost/{id}", produces = "application/json") //TODO: Logger? //TODO: in getblog umbenennen
+    @GetMapping(path = "api/blogpost/{id}", produces = "application/json") // TODO: Logger? //TODO: in getblog
+                                                                           // umbenennen
     public Blogpost getBlogpostById(@PathVariable String id) {
         return blogRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping(path = "api/getBlogposts", produces = "application/json") //TODO: Logger? TODO: Errorhandling
+    @GetMapping(path = "api/getBlogposts", produces = "application/json") // TODO: Logger? TODO: Errorhandling
     public Queue<Blogpost> getBlogposts(HttpServletRequest request) {
         return blogService.getBlogposts(request);
     }
@@ -92,6 +92,11 @@ public class RequestHandler {
     @GetMapping(path = "api/downloadPDF/{fileName}", produces = "application/json")
     public ResponseEntity<Resource> downloadPDF(@PathVariable String fileName) throws MalformedURLException {
         return pdfService.downloadPDF(fileName);
+    }
+
+    @GetMapping("/api/contact/phone")
+    public ResponseEntity<String> getPhoneNumber(Authentication authentication) {
+        return ResponseEntity.ok("076 759 83 45");
     }
 
 }
