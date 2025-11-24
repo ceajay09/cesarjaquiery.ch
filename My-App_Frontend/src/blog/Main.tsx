@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Markdown from './Markdown';
 import { useEffect, useState } from 'react';
 import { Paper } from '@mui/material';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../utils/LanguageContext';
 
 interface Post {
   id: string;

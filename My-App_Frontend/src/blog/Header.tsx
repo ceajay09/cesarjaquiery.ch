@@ -8,7 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { useLanguage } from '../LanguageContext';
+import { useLanguage } from '../utils/LanguageContext';
 
 interface Section {
   title: string;
