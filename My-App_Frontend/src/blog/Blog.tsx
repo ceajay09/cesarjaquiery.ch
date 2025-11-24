@@ -17,6 +17,7 @@ import Layout from './Layout';
 import { useState } from 'react';
 import AboutMe from './AboutMe';
 import { useTranslation } from 'react-i18next';
+import { getAge } from '../utils/Age';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -25,6 +26,7 @@ const defaultTheme = createTheme();
 export default function Blog() {
   const { t } = useTranslation();
   const [posts, setPosts] = useState([]);
+  const age = getAge();
 
 
   const sections = [
@@ -65,7 +67,7 @@ export default function Blog() {
 
   const sidebar = {
     title: t('blog.sidebar.title'),
-    description: t('blog.sidebar.description'),
+    description: t('blog.sidebar.description', { age }),
     social: [
       { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/ceajay09' },
       { name: 'LinkedIn', icon: LinkedInIcon, url: 'https://linkedin.com/in/cesar-jaquiéry-9215aa179' }

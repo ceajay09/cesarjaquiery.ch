@@ -5,7 +5,7 @@
     "qualification": "Qualification:",
     "qualificationDetail": "Business Information BSc (FHNW)",
     "age": "Age:",
-    "ageDetail": "28",
+    "ageDetail": "{{age}}",
     "phoneNumber": "Phone Number:",
     "showNumber": "Show Number",
     "email": "E-Mail:",
@@ -16,7 +16,7 @@
     "interestList": "Small private IT projects, Climbing, Hiking, Water sports, Diving",
     "hello": "Hello, it's me César",
     "techJourney": "How did I begin my tech journey?",
-    "techJourneyDetail": "From a young age, I have been fascinated by the world of IT. My experience as a working student at a renowned pharmaceutical company enhanced my understanding of modern technologies and process optimization, deepening my interest in the field. During my studies in Business Informatics, where I focused on programming modules, I actively engaged in practical projects with companies as clients, eagerly taking on responsibilities and applying theoretical knowledge in real-world settings. With my employer Opacc, I can take on new responsibilities and deepen my programming experience in the use of scripts.",
+    "techJourneyDetail": "From a young age, I have been fascinated by the world of IT. My experience as a working student at a renowned pharmaceutical company enhanced my understanding of modern technologies and process optimization, deepening my interest in the field. During my studies in Business Informatics, where I focused on programming modules, I actively engaged in practical projects with companies as clients, taking on responsibility and applying theoretical knowledge in real-world settings. With my employer Opacc, I can take on new responsibilities and deepen my programming experience by designing script-based solutions and working on end-to-end business applications. On top of this, I further strengthen my theoretical foundation through graduate-level studies in computer science.",
     "keySkills": "What key skills have I developed?",
     "keySkillsDetail": "My diverse work experience allowed me to gain valuable knowledge and expand my understanding of different programming languages by writing scripts. It also deepened my interest in IT as I worked at the intersection of business and technology. During my civil service in IT support, I acquired comprehensive knowledge about diverse systems and their interactions, further solidifying my technical foundation. This experience was particularly enriching during a ransomware attack, which provided significant insights into how systems can interact and work together under crisis scenarios.",
     "continuousLearning": "What motivates my continuous learning?",
@@ -40,8 +40,8 @@
       "linkText": "See full CV..."
     },
     "featuredPost1": {
-      "title": "My New Website Is Live Now!",
-      "date": "Apr 22",
+      "title": "My Website explained!",
+      "date": "Nov 24",
       "description": "I’m excited to launch my new website! Here, I'll share my coding journey, insights on tech innovations, and more. Let’s explore together.",
       "imageLabel": "Diagram AWS Infrastructure"
     },
@@ -53,7 +53,7 @@
     },
     "sidebar": {
       "title": "Who I Am",
-      "description": "28-year-old Business Information FH graduate and ERP Project Manager interested in technology. I am continuously learning and ready to take on responsibility and explore new opportunities."
+      "description": "{{age}}-year-old Business Information FH graduate and ERP Project Manager interested in technology. I am currently studying for a Master of Engineering (MSc) at the BFH with the profil of computer science."
     }
   },
   "aboutThisWebsite": {

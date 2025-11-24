@@ -5,7 +5,7 @@
     "qualification": "Qualifikation:",
     "qualificationDetail": "Wirtschaftsinformatik BSc (FHNW)",
     "age": "Alter:",
-    "ageDetail": "28",
+    "ageDetail": "{{age}}",
     "phoneNumber": "Telefonnummer:",
     "showNumber": "Nummer anzeigen",
     "email": "E-Mail:",
@@ -15,7 +15,7 @@
     "interestList": "Kleine private IT-Projekte, Klettern, Wandern, Wassersport, Tauchen",
     "hello": "Wer bin ich?",
     "techJourney": "Wie begann meine Reise?",
-    "techJourneyDetail": "Schon in jungen Jahren war ich von der Welt der IT fasziniert. Meine Erfahrungen als Werkstudent bei einem renommierten Pharmaunternehmen vertieften mein Verständnis für moderne Technologien und Prozessoptimierung, was mein Interesse in diesem Bereich verstärkte. Während meines Studiums in der Wirtschaftsinformatik, bei dem ich mich auf Programmiermodule konzentrierte, engagierte ich mich aktiv in praktischen Projekten mit Unternehmen als Kunden, übernahm gerne Verantwortung und setzte theoretisches Wissen in realen Situationen um. Mit meinem Arbeitgeber Opacc, kann ich neue Verantwortungen übernehmen und meine Programmiererfahrung in der Anwendung von Skripten vertiefen.",
+    "techJourneyDetail": "Schon in jungen Jahren war ich von der Welt der IT fasziniert. Meine Erfahrungen als Werkstudent bei einem renommierten Pharmaunternehmen vertieften mein Verständnis für moderne Technologien und Prozessoptimierung, was mein Interesse in diesem Bereich verstärkte. Während meines Studiums in der Wirtschaftsinformatik, bei dem ich mich auf Programmiermodule konzentrierte, engagierte ich mich aktiv in praktischen Projekten mit Unternehmen als Kunden, übernahm gerne Verantwortung und setzte theoretisches Wissen in realen Situationen um. Mit meinem Arbeitgeber Opacc, kann ich neue Verantwortungen übernehmen und meine Programmiererfahrung in der Anwendung von Skripten vertiefen. Darüber hinaus erlerne ich die theoretischen Grundlagen durch ein Masterstudium in Informatik.",
     "keySkills": "Welche Fähigkeiten habe ich entwickelt?",
     "keySkillsDetail": "Meine vielfältigen Berufserfahrungen ermöglichten es mir, wertvolle Kenntnisse zu sammeln und mein Verständnis für verschiedene Programmiersprachen durch das Schreiben von Skripten zu erweitern. Mein Interesse an der IT vertiefte sich weiter, da ich an der Schnittstelle von Wirtschaft und Technologie arbeitete. Während meines Zivildienstes im IT-Support erwarb ich umfassendes Wissen über verschiedene Systeme und deren Interaktionen, was meine technische Grundlage weiter festigte. Diese Erfahrung war besonders bereichernd während eines Ransomware-Angriffs, der bedeutende Einblicke in die Interaktion und Zusammenarbeit von Systemen in Krisensituationen bot.",
     "continuousLearning": "Was motiviert mein kontinuierliches Lernen?",
@@ -37,8 +37,8 @@
       "linkText": "Lebenslauf anzeigen..."
     },
     "featuredPost1": {
-      "title": "Meine Website ist jetzt live!",
-      "date": "22. Apr",
+      "title": "Meine Website erklärt!",
+      "date": "24. Nov",
       "description": "Ich freue mich, meine neue Website zu veröffentlichen! Hier werde ich Einblicke in technische Innovationen und mehr teilen.",
       "imageLabel": "Diagramm AWS Infrastruktur"
     },
@@ -50,7 +50,7 @@
     },
     "sidebar": {
       "title": "Wer bin ich",
-      "description": "28-jähriger Wirtschaftsinformatik-Absolvent (FH) und ERP-Projektleiter mit grossem Interesse an der Technik. Ich bin motiviert neues zu Lernen, Verantwortung zu übernehmen und neue Möglichkeiten zu nutzen."
+      "description": "{{age}}-jähriger ERP-Projektleiter mit grossem Interesse an der Technik. Zurzeit mache ich den Master of Engineering (Msc) an der BFH mit dem Profil Computer Science."
     }
 
   }, 

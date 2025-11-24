@@ -10,6 +10,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
+import { getAge } from '../utils/Age';
 
 const theme = createTheme();
 const practicalProjectURL = "https://studierendenprojekte.wirtschaft.fhnw.ch/view/2750"
@@ -20,6 +21,7 @@ export default function AboutMe() {
   const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
   const [showNumber, setShowNumber] = useState(false);
+  const age = getAge();
 
   const handleClick = () => {
     if (!phoneNumber) {
@@ -51,7 +53,7 @@ export default function AboutMe() {
                 </Typography>
                 <Typography component="div" variant="body1" sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <span>{t('aboutMe.age')}</span>
-                  <span>28</span>
+                  <span>{ age }</span>
                 </Typography>
                 <Typography component="div" variant="body1" sx={{ display: 'flex', justifyContent: 'space-between' }}>
                   <Typography variant="body1" component="span">
