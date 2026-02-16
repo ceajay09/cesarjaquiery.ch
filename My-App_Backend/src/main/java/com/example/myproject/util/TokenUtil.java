@@ -14,19 +14,19 @@ import org.springframework.stereotype.Component;
 public class TokenUtil {
 
     private static final Logger logger = LogManager.getLogger(TokenUtil.class);
-    private static final Key key = Keys.secretKeyFor(io.jsonwebtoken.SignatureAlgorithm.HS256); //TODO: Store keys centralized and securely
+    private static final Key key = Keys.secretKeyFor(io.jsonwebtoken.SignatureAlgorithm.HS256); // TODO: Store keys
+                                                                                                // centralized and
+                                                                                                // securely
     private final AccountRepository accountRepository;
 
-    public TokenUtil(AccountRepository accountRepository){
+    public TokenUtil(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
-    public static String getEmailFromToken(String token) { //TODO: Make it not static
-        Claims claims = Jwts.parserBuilder()
-                .setSigningKey(key)
-                .build()
-                .parseClaimsJws(token)
+    public static String getEmailFromToken(String token) { // TODO: Make it not static
+        Claims claims = Jwts.parser().verifyWith((javax.crypto.SecretKey) key).build().parseSignedClaims(token)
                 .getBody();
+        ;
         return claims.getSubject();
     }
 
@@ -35,7 +35,7 @@ public class TokenUtil {
             if (token.startsWith("Bearer ")) {
                 token = token.substring(7);
             }
-            Jws<Claims> jws = Jwts.parserBuilder().setSigningKey(TokenService.getKey()).build()
+            Jws<Claims> jws = Jwts.parser().setSigningKey(TokenService.getKey()).build()
                     .parseClaimsJws(token);
             Claims claims = jws.getBody();
             String email = claims.getSubject();

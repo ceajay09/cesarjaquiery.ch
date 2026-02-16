@@ -13,7 +13,8 @@ import org.apache.logging.log4j.Logger;
 //TODO: Replace Tokenservice with Keycloak
 
 /**
- * Service for managing JSON Web Tokens (JWT), including creation, validation, and handling token blacklisting.
+ * Service for managing JSON Web Tokens (JWT), including creation, validation,
+ * and handling token blacklisting.
  */
 public class TokenService {
 
@@ -28,7 +29,7 @@ public class TokenService {
 				.setExpiration(expirationDate)
 				.signWith(key)
 				.compact();
-		if(isValidToken(token)){
+		if (isValidToken(token)) {
 			logger.info("Token created and validated");
 		} else {
 			logger.warn("Creation or Validation of Token failed");
@@ -55,7 +56,11 @@ public class TokenService {
 	}
 
 	private Claims getAllClaimsFromToken(String token) {
-		return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+		return Jwts.parser()
+				.verifyWith((javax.crypto.SecretKey) key)
+				.build()
+				.parseSignedClaims(token)
+				.getPayload();
 	}
 
 	private Boolean isTokenExpired(String token) {
@@ -68,7 +73,7 @@ public class TokenService {
 			if (token.startsWith("Bearer ")) {
 				token = token.substring(7);
 			}
-			Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+			Jwts.parser().verifyWith((javax.crypto.SecretKey) key).build().parseSignedClaims(token);
 			return true;
 		} catch (ExpiredJwtException ex) {
 			// Token abgelaufen
