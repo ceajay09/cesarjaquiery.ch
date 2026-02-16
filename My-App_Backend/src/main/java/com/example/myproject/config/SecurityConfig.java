@@ -11,7 +11,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
 import static org.springframework.security.config.Customizer.withDefaults;
+
+import java.util.List;
 
 /**
  * Configures security settings for the application, including HTTP security,
@@ -44,28 +50,32 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                // Using DSL for explicit configuration
+        return http
+                .csrf(csrf -> csrf.disable())
+                .cors(withDefaults())
+                .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .formLogin(f -> f.disable())
+                .logout(l -> l.disable())
+                .httpBasic(withDefaults())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/actuator/health", "/actuator/info").permitAll()
                         .requestMatchers("/actuator/**").hasRole("ADMIN")
-                        .requestMatchers("/api/**", "/actuator/**", "/login", "/register", "/blog", "/aboutMe", "/",
-                                "/aboutThisWebsite", "/techInsights", "/latestPosts", "/contactMe",
-                                "/imprint", "/api/getBlogs", "/api/downloadPDF/**")
-                        .permitAll() // Anpassung der Zugriffserlaubnis TODO: Zugriffe
-                        .anyRequest().authenticated() // Anforderung der Authentifizierung für alle anderen Anfragen
-                )
-                .httpBasic(withDefaults()) // Einrichtung der Basisauthentifizierung, kann durch JWT-Authentifizierung
-                                           // ersetzt werden
-                // Standardmäßige CSRF-Protektion ist für APIs, die von nicht browserbasierten
-                // Clients konsumiert werden, oft deaktiviert
-                .csrf(csrf -> csrf.disable())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Konfiguration
-                                                                                                               // für
-                                                                                                               // stateless
-                                                                                                               // Anwendungen
+                        .anyRequest().authenticated())
+                .build();
+    }
 
-        return http.build();
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration cfg = new CorsConfiguration();
+        cfg.setAllowedOrigins(List.of("https://cesarjaquiery.ch", "http://localhost"));
+        cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        cfg.setAllowedHeaders(List.of("*"));
+        cfg.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", cfg);
+        return source;
     }
 
     /**
