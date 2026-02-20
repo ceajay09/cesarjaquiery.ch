@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot (dev)",
+      "request": "launch",
+      "mainClass": "com.example.myproject.Application",
+      "args": "--spring.profiles.active=dev"
+    }
+  ]
+}

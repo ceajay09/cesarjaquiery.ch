@@ -4,6 +4,7 @@ src/main/resources/environment-variables.env
 target
 docker-compose.yml
 docker-compose.dev.yml
+docker-compose.dev_copy.yml
 environment-variables.env
 
 # Frontend
