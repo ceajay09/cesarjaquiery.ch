@@ -24,6 +24,7 @@
 		<java.version>17</java.version>
 		<assertj.version>3.27.7</assertj.version>
 		<logback.version>1.5.25</logback.version>
+  		<jackson-bom.version>2.21.1</jackson-bom.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -77,7 +78,6 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<!-- <version>2.15.4</version> -->
 		</dependency>
 		<dependency>
 			<groupId>org.antlr</groupId>
