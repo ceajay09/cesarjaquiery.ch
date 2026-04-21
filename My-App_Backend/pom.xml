@@ -10,10 +10,10 @@
 		</repository>
 	</repositories>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.9</version>
-		<relativePath/> <!-- lookup parent from repository -->
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.13</version>
+    <relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>my-app</artifactId>
