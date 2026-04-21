@@ -22,9 +22,9 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<assertj.version>3.27.7</assertj.version>
+		<!-- <assertj.version>3.27.7</assertj.version>
 		<logback.version>1.5.25</logback.version>
-  		<jackson-bom.version>2.21.1</jackson-bom.version>
+  		<jackson-bom.version>2.21.1</jackson-bom.version> -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,10 +75,10 @@
 <!--			<artifactId>amqp-client</artifactId>-->
 <!--			<version>5.19.0</version>-->
 <!--		</dependency>-->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4</artifactId>
