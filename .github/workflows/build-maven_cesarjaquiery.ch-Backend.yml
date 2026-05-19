@@ -17,6 +17,7 @@ on:
       - main
     paths:
       - 'My-App_Backend/**'
+      - '.github/workflows/build-maven_cesarjaquiery.ch-Backend.yml'
 
 jobs:
   build-jar:
