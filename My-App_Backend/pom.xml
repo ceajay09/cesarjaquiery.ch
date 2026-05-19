@@ -8,11 +8,6 @@
 			<name>Maven Central</name>
 			<url>	https://repo1.maven.org/maven2/</url>
 		</repository>
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/ceajay09/shared-backend-parent</url>
-		</repository>
 	</repositories>
 	<parent>
     <groupId>ch.cesarjaquiery</groupId>
