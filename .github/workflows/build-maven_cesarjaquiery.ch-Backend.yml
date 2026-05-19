@@ -60,7 +60,7 @@ jobs:
         </settings>
         EOF
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PACKAGES_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
     - name: Build Backend with Maven
       run: |
           cd My-App_Backend
