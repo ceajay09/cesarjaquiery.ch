@@ -1,0 +1,24 @@
+version: 2
+registries:
+  github-maven:
+    type: maven-repository
+    url: https://maven.pkg.github.com/ceajay09/shared-backend-parent
+    username: ceajay09
+    password: ${{secrets.DEPENDABOT_GITHUB_PACKAGES_TOKEN}}
+updates:
+  - package-ecosystem: "maven"
+    directory: "/My-App_Backend"
+    registries:
+      - github-maven
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    groups:
+      spring:
+        patterns:
+          - "org.springframework.boot:*"
+          - "org.springframework.security:*"
+      tomcat:
+        patterns:
+          - "org.apache.tomcat*:*"
+          - "org.apache.tomcat.embed:*"
