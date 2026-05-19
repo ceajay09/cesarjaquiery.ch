@@ -50,7 +50,7 @@ jobs:
             <server>
               <id>github</id>
               <username>ceajay09</username>
-              <password>${env.GITHUB_TOKEN}</password>
+              <password>${env.PACKAGES_TOKEN}</password>
             </server>
           </servers>
           <profiles>
@@ -70,11 +70,13 @@ jobs:
         </settings>
         EOF
       env:
-        GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+        PACKAGES_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
     - name: Build Backend with Maven
       run: |
           cd My-App_Backend
           mvn -B package --file pom.xml
+      env:
+        PACKAGES_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
     - name: Archive Backend Jar
       uses: actions/upload-artifact@v4
       with:
