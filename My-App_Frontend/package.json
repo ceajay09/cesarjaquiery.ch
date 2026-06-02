@@ -79,6 +79,6 @@
     "vite-plugin-commonjs": "^0.10.4",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.9"
+    "vitest": "^4.1.0"
   }
 }
