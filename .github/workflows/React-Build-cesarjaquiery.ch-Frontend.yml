@@ -30,6 +30,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: My-App_Frontend/package-lock.json
+    - name: Use npm 11
+      run: |
+        npm install -g npm@11.16.0
+        npm --version
     - run: |
         cd My-App_Frontend
         npm ci
