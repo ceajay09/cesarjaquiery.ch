@@ -22,3 +22,36 @@ updates:
         patterns:
           - "org.apache.tomcat*:*"
           - "org.apache.tomcat.embed:*"
+  - package-ecosystem: "npm"
+    directory: "/My-App_Frontend"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "vite-*"
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+          - "vite-node"
+      typescript-eslint:
+        patterns:
+          - "typescript"
+          - "typescript-eslint"
+          - "@typescript-eslint/*"
+          - "@eslint/*"
+          - "eslint"
+      mui:
+        patterns:
+          - "@mui/*"
+          - "@emotion/*"

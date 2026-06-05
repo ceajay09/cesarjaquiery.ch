@@ -8,11 +8,12 @@ on:
     branches:
       - main
     types: [closed]
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - 'My-App_Frontend/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'My-App_Frontend/**'
+      - '.github/workflows/React-Build-cesarjaquiery.ch-Frontend.yml'
 
 jobs:
 
@@ -22,16 +23,16 @@ jobs:
       matrix:
         node-version: [22.x]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: My-App_Frontend/package-lock.json
     - run: |
         cd My-App_Frontend
-        npm ci || npm install
+        npm ci
         npm run build
       env:
         VITE_API_URL: ${{ '' }} #Empty String
