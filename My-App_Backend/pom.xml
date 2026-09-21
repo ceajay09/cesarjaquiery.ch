@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>ch.cesarjaquiery</groupId>
 		<artifactId>shared-backend-parent</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
@@ -14,7 +14,7 @@
 	<name>my-app</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<jackson.version>2.22.0</jackson.version>
+		<jackson.version>2.22.1</jackson.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
