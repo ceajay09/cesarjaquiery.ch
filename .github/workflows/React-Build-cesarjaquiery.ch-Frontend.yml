@@ -7,7 +7,9 @@ on:
   pull_request:
     branches:
       - main
-    types: [closed]
+    paths:
+      - 'My-App_Frontend/**'
+      - '.github/workflows/React-Build-cesarjaquiery.ch-Frontend.yml'
   push:
     branches:
       - main
@@ -48,13 +50,16 @@ jobs:
         path: My-App_Frontend/dist
 
   push-to-aws:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
     needs: build-react
     runs-on: ubuntu-latest
     steps:
 
       
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download Frontend Build Artefact
         uses: actions/download-artifact@v4
